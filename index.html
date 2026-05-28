@@ -26,7 +26,7 @@
     const $ = id => document.getElementById(id); const list = $('chapterList'); const title = $('chapterTitle'); const meta = $('chapterMeta'); const content = $('content'); const volumeTitle = $('volumeTitle'); const siteTitle = $('siteTitle'); const siteSubtitle = $('siteSubtitle'); const mobileTitle = $('mobileTitle'); const openNav = $('openNav'); const langMobile = $('langMobile'); const navTitle = $('navTitle'); const topBtn = $('topBtn'); const prevBtn = $('prevBtn'); const nextBtn = $('nextBtn'); const fontMinus = $('fontMinus'); const fontPlus = $('fontPlus'); const progress = $('progress'); const commentsTitle = $('commentsTitle'); const commentsNote = $('commentsNote'); const commentForm = $('commentForm'); const commentInput = $('commentInput'); const commentCounter = $('commentCounter'); const commentSubmit = $('commentSubmit'); const commentStatus = $('commentStatus'); const commentList = $('commentList');
     document.documentElement.style.setProperty('--font-size', state.font + 'px');
     const supabase = { url: 'https://ydslfhcmzjdprmrkywqy.supabase.co', key: 'sb_publishable_E--CfaIj1_6YzY0wdIc7lQ_b8f23WiL' };
-    const commentAliases = { zh: ['姜岚', '霍钰', '谷懿', '朱铭', '李向阳', '袁林修', '陈小云', '吴悠', '尹渊', '王伊', '毛锐', '张迪'], ja: ['姜嵐', '霍鈺', '谷懿', '朱銘', '李向陽', '袁林修', '陳小雲', '呉悠', '尹淵', '王伊', '毛鋭', '張迪'] };
+    const commentAliases = { zh: ['陈小云', '程昕亮', '谷懿', '霍钰', '姜岚', '李向阳', '王伊', '吴悠', '张迪', '朱铭', '尹渊', '袁林修'], ja: ['陈小云', '程昕亮', '谷懿', '霍钰', '姜岚', '李向阳', '王伊', '吴悠', '张迪', '朱铭', '尹渊', '袁林修'] };
     const commentText = { zh: { title: '评论', note: '匿名评论会以作品角色名作为代号显示，所有读者都可以看到。', placeholder: '写下你的想法。请保持友善，最多 800 字。', submit: '发表', loading: '正在读取评论...', empty: '还没有评论，来写下第一条吧。', success: '评论已发表。', error: '评论暂时没有成功，请稍后再试。', tooLong: '评论最多 800 字。' }, ja: { title: 'コメント', note: '匿名コメントは作中人物の名前を代号として表示され、すべての読者に公開されます。', placeholder: '感想を書いてください。800字以内でお願いします。', submit: '投稿', loading: 'コメントを読み込み中...', empty: 'まだコメントはありません。最初の一言を書いてみませんか。', success: 'コメントを投稿しました。', error: '投稿に失敗しました。少し時間をおいて再試行してください。', tooLong: 'コメントは800字以内です。' } };
     function commentCopy() { return commentText[state.lang] || commentText.zh; }
     function commentFingerprint() { let fp = localStorage.getItem('reborn.comment.fp'); if (!fp) { fp = (crypto.randomUUID ? crypto.randomUUID() : String(Date.now()) + Math.random().toString(36).slice(2)); localStorage.setItem('reborn.comment.fp', fp); } return fp; }
@@ -50,6 +50,7 @@ document.querySelectorAll('[data-lang-option]').forEach(btn => btn.addEventListe
   </script>
 </body>
 </html>
+
 
 
 
